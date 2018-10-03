@@ -156,6 +156,15 @@ Output sequence name and its length for every sequence within a fasta file:
 Convert a FASTQ file to FASTA:
 
     sed -n '1~4s/^@/>/p;2~4p' file.fq > file.fa
+    
+Using it within a loop
+
+            for i in *.fastq
+                do
+                    y=${i%.fastq}
+                    sed -n '1~4s/^@/>/p;2~4p' $y.fastq > $y.fasta
+                    echo $y.fastq
+                done
 
 Extract every 4th line starting at the second line (extract the sequence from FASTQ file):
 
