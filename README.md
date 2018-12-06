@@ -119,6 +119,9 @@ Delete everything after and including a line containing `EndOfUsefulData`:
 
 [[back to top](#contents)]
 
+Removes all the header descriptions in a fasta file and only keeps the identifier (genbank id) or other ID.
+
+    sed 's/ .*$//' file.fasta > new_file.fasta
 
 Returns all lines on Chr 1 between 1MB and 2MB in file.txt. (assumes) chromosome in column 1 and position in column 3 (this same concept can be used to return only variants that above specific allele frequencies):
 
